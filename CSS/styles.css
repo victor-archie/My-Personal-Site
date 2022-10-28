@@ -1,27 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 body {
     color: #40514e;
-    margin: 0;
     text-align: center;
     font-family: 'Poppins', sans-serif;
+
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: #FFFFFF;
+}
+
+nav {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+
+}
+
+.brand-name {
+    text-decoration: none;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+
+
+}
+
+nav ul li {
+    display: inline-flex;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 25px;
+    color: #66BFBF;
+}
+
+nav ul li a:hover {
+    background-color: #66BFBF;
+    color: rgb(238, 255, 0);
+}
+
+.hamburger {
+    display: none;
+    padding: 20px;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 7px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+
 }
 
 h1 {
-    color:  #66BFBF;
+    color: #66BFBF;
     font-size: 5.62rem;
     margin: 50px auto 0 auto;
     font-family: 'sacramento', sans-serif;
 }
 
 h2 {
-    color:  #66BFBF;
+    color: #66BFBF;
     font-size: 2.5rem;
     font-family: 'Montserrat', sans-serif;
-    font-weight: normal;
+    font-weight: bold;
 }
 
 h3 {
     color: #11999E;
-    font-family: 'Montserrat', sans-serif
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
 }
 
 hr {
@@ -34,6 +97,7 @@ hr {
 p {
     list-style: 2;
 }
+
 .intro {
     width: 30%;
     margin: auto;
@@ -62,41 +126,48 @@ p {
 }
 
 .top-cloud {
-    position:absolute;
-    right: 300px;
-    top: 50px;
+    position: absolute;
+    right: 10%;
+    top: 30%;
 }
 
 .bottom-cloud {
-    position:absolute;
-    left: 300px;
-    top: 200px;
+    position: absolute;
+    left: 15%;
+    top: 60%;
 }
 
-a {
+div a {
     color: #11999E;
     font-family: 'Montserrat', sans-serif;
     margin: 20px 10px;
     text-decoration: none;
 }
 
-a:hover {
-    color: aqua;
+div a:hover {
+    color: rgb(238, 255, 0);
 }
+
 .graphic-design {
     width: 25%;
     float: left;
     margin-right: 30px;
 }
+
 .uiux {
     width: 25%;
     float: right;
     margin-left: 30px;
 }
+
 .smm {
     width: 25%;
     float: left;
     margin-right: 30px;
+}
+
+.contact-msg {
+    margin-bottom: 30px;
 }
 
 
@@ -130,9 +201,9 @@ a:hover {
     cursor: pointer;
     text-align: center;
     margin: 40px auto 60px;
- }
- 
- .btn:hover {
+}
+
+.btn:hover {
     border: solid #337FED 0;
     background: #2BC4AD;
     background-image: -webkit-linear-gradient(top, #2BC4AD, #30E3CB);
@@ -144,8 +215,92 @@ a:hover {
     -moz-border-radius: 9px;
     border-radius: 9px;
     text-decoration: none;
- }
+}
 
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fff;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
 
-                
-                
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-link:hover {
+        background-color: #66BFBF;
+        color: rgb(238, 255, 0);
+    }
+
+    .nav-link {
+        width: 100%;
+        place-content: center;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .bottom-cloud,
+    .top-cloud {
+        width: 15%;
+    }
+
+    .mountain {
+        width: 50%;
+    }
+
+    .intro {
+        width: 50%;
+        margin: auto;
+    }
+
+    .archie {
+        margin-bottom: 30px;
+    }
+
+    h1 {
+        font-size: 3.62rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    hr {
+        width: 10%;
+        margin: 50px auto;
+    }
+
+    .middle-container {
+        margin: 50px auto;
+    }
+
+    .skill-row {
+        margin: 50px auto;
+    }
+}
